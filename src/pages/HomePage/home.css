@@ -1,0 +1,47 @@
+.btn-clicked {
+  box-shadow: 6px -6px 0 rgb(0, 0, 0);
+  transition: 0.3s;
+}
+
+.btn-clicked:hover {
+  transform: translateY(-3px);
+  box-shadow: none;
+}
+
+.bg-effect-shadow {
+  box-shadow: 13px -15px 0 3px #2ec4b6;
+}
+
+@media screen and (min-width: 300px) {
+  .jumbotron {
+    background: #fdfffc;
+    min-height: 100vh;
+  }
+  .service-content {
+    background: #fdfffc;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .jumbotron {
+    background: url("/public/assets/blob_12-6-55.svg");
+    background-position-x: -120px;
+    background-position-y: 250px;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .service-content {
+    background: url("/public/assets/blob_13.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .jumbotron {
+    background-position: center;
+    margin-top: 100px;
+    min-height: 80vh;
+  }
+}
