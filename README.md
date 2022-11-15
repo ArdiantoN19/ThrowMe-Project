@@ -1,5 +1,3 @@
-# ThrowMe Project Starter
-
 # Project ThrowMe
 
 # Getting Started with Create React App

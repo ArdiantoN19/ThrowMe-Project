@@ -12,6 +12,15 @@
   box-shadow: 13px -15px 0 3px #2ec4b6;
 }
 
+.service-content__serviceCard {
+  transition: 0.5s;
+}
+
+.service-content__serviceCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
 @media screen and (min-width: 300px) {
   .jumbotron {
     background: #fdfffc;
@@ -20,21 +29,29 @@
   .service-content {
     background: #fdfffc;
   }
+  .line {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 700px) {
   .jumbotron {
-    background: url("/public/assets/blob_12-6-55.svg");
+    background: url("/public/assets/backgrounds/blob_12-6-55.svg");
     background-position-x: -120px;
     background-position-y: 250px;
     background-size: cover;
     background-repeat: no-repeat;
   }
   .service-content {
-    background: url("/public/assets/blob_13.svg");
+    background: url("/public/assets/backgrounds/blob_13.svg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+  }
+  .line {
+    display: inline-block;
+    width: 30%;
+    height: 3px;
   }
 }
 
@@ -43,5 +60,9 @@
     background-position: center;
     margin-top: 100px;
     min-height: 80vh;
+  }
+  .line {
+    width: 45%;
+    height: 3px;
   }
 }

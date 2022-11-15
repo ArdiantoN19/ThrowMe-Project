@@ -1,6 +1,6 @@
 /* make the customizations */
 $theme-colors: (
-  "danger": #ff9f1c,
+  "danger": #eb0000,
   "success": #2ec4b6,
   "white": #fdfffc,
   "black": #011627,
@@ -18,6 +18,8 @@ li {
   &.nav-item .nav-link {
     color: #011627;
     margin-right: 20px;
+    font-size: 18px;
+    padding: 9px 0;
   }
   &.nav-item:hover {
     text-decoration: underline;
@@ -25,9 +27,16 @@ li {
       color: #2ec4b6;
     }
   }
-  .nav-link.active {
+  .active {
     color: #2ec4b6 !important;
     text-decoration: underline;
+  }
+}
+
+input {
+  &.form-control:focus {
+    border-color: #2ec4b6;
+    box-shadow: 0 0 0.23rem #2ec4b6;
   }
 }
 
