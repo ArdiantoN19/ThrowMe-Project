@@ -1,0 +1,21 @@
+.sidebar {
+  width: 85%;
+  max-height: 82vh;
+  top: 2%;
+  left: 2%;
+  font-family: "Ubuntu";
+  overflow-y: auto !important;
+}
+
+@media screen and (min-width: 600px) {
+  .sidebar {
+    width: 45%;
+    top: 2%;
+    left: 1%;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .sidebar {
+    width: 25%;
+  }
+}

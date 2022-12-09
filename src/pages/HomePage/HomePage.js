@@ -1,28 +1,35 @@
 import React from "react";
 import About from "../../components/HomeComponent/About";
+import NewPlaceList from "../../components/HomeComponent/UpdatedPlace/NewPlaceList";
 import Jumbotron from "../../components/HomeComponent/Jumbotron";
 import ServiceCard from "../../components/HomeComponent/ServiceCard";
 import "./home.css";
+import NewArticleList from "../../components/HomeComponent/UpdatedArticle/NewArticleList";
 
-function HomePage() {
+const HomePage = () => {
   return (
     <>
-      <div className="jumbotron pt-3">
+      <div className="jumbotron pt-5 mt-5">
         <div className="container">
           <Jumbotron />
         </div>
       </div>
-      <div className="container">
+      <div className="container pb-3">
         <About />
       </div>
-      <div className="service-content mt-5">
+      <div className="mt-5 pb-3 bg-secondary">
         <div className="container">
-          <h2 className="fs-2 fw-bold">What can you do?</h2>
           <ServiceCard />
         </div>
       </div>
+      <div className="container mt-5">
+        <NewPlaceList />
+      </div>
+      <div className="container mt-5">
+        <NewArticleList />
+      </div>
     </>
   );
-}
+};
 
 export default HomePage;

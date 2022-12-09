@@ -1,0 +1,27 @@
+.active {
+  position: relative;
+}
+
+.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30%;
+  height: 6px;
+  background-color: #2ec4b6;
+  border-radius: 3px;
+}
+
+@media screen and (min-width: 1000px) {
+  .active::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 25%;
+    width: 50%;
+    height: 6px;
+    background-color: #2ec4b6;
+    border-radius: 3px;
+  }
+}

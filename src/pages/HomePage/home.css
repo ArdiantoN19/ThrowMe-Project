@@ -8,8 +8,48 @@
   box-shadow: none;
 }
 
+.card-zoom {
+  width: 100%;
+  overflow: hidden;
+}
+
+.zoom {
+  width: 100%;
+  transition: 0.7s;
+}
+
+.zoom:hover {
+  transform: scale(1.1);
+}
+
 .bg-effect-shadow {
   box-shadow: 13px -15px 0 3px #2ec4b6;
+}
+
+.service-content__serviceCard,
+.card-up {
+  transition: 0.5s;
+}
+
+.service-content__serviceCard:hover,
+.card-up:hover {
+  transform: translateY(-5px);
+  box-shadow: 2px 8px 10px rgba(0, 0, 0, 0.2);
+}
+
+.address,
+.title,
+.headline {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.img-service {
+  width: 400px;
+  height: 300px;
 }
 
 @media screen and (min-width: 300px) {
@@ -20,21 +60,47 @@
   .service-content {
     background: #fdfffc;
   }
+  .line {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 700px) {
   .jumbotron {
-    background: url("/public/assets/blob_12-6-55.svg");
+    background: url("/public/assets/backgrounds/blob_12-6-55.svg");
     background-position-x: -120px;
     background-position-y: 250px;
     background-size: cover;
     background-repeat: no-repeat;
   }
   .service-content {
-    background: url("/public/assets/blob_13.svg");
+    background: url("/public/assets/backgrounds/blob_13.svg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+  }
+  .line {
+    display: inline-block;
+    width: 30%;
+    height: 3px;
+  }
+  .img-service {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .jumbotron {
+    background-position: center;
+    background-position-x: -90px;
+    background-position-y: 80px;
+    margin-top: 100px;
+    min-height: 80vh;
+  }
+  .line {
+    width: 45%;
+    height: 3px;
   }
 }
 
@@ -43,5 +109,9 @@
     background-position: center;
     margin-top: 100px;
     min-height: 80vh;
+  }
+  .line {
+    width: 45%;
+    height: 3px;
   }
 }
