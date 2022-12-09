@@ -150,7 +150,7 @@ const ArticlesPage = () => {
                       id={dataFeature.id}
                       url={
                         dataFeature?.attributes?.thumbnail?.data?.attributes
-                          ?.url
+                          ?.formats?.small?.url
                       }
                       category={
                         dataFeature?.attributes?.category?.data?.attributes

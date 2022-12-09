@@ -75,7 +75,10 @@ const NewArticleList = () => {
           <NewArticleItem
             key={newArticle.id}
             id={newArticle.id}
-            url={newArticle?.attributes?.thumbnail?.data?.attributes?.url}
+            url={
+              newArticle?.attributes?.thumbnail?.data?.attributes?.formats
+                ?.thumbnail?.url
+            }
             title={newArticle?.attributes?.title}
             category={newArticle?.attributes?.category?.data?.attributes?.name}
             headline={newArticle?.attributes?.headline}
