@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Jumbotron() {
+const Jumbotron = () => {
   return (
     <div className="row justify-content-center align-items-center">
       <div className="col-12 col-lg-5 text-black order-1 order-lg-0">
@@ -47,6 +47,6 @@ function Jumbotron() {
       </div>
     </div>
   );
-}
+};
 
 export default Jumbotron;

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import "./formInput.css";
 
-function FormInputPassword({
+const FormInputPassword = ({
   label,
   onChange,
   onClick,
@@ -11,7 +11,7 @@ function FormInputPassword({
   errMessage,
   id,
   ...inputProps
-}) {
+}) => {
   const [focused, setFocused] = useState(false);
 
   const handleFocus = () => {
@@ -43,7 +43,7 @@ function FormInputPassword({
       </div>
     </div>
   );
-}
+};
 
 FormInputPassword.propTypes = {
   label: PropTypes.string.isRequired,

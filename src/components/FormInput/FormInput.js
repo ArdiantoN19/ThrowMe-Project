@@ -2,7 +2,7 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import "./formInput.css";
 
-function FormInput({ label, onChange, errMessage, id, ...inputProps }) {
+const FormInput = ({ label, onChange, errMessage, id, ...inputProps }) => {
   const [focused, setFocused] = useState(false);
   const handleFocus = () => {
     setFocused(true);
@@ -24,7 +24,7 @@ function FormInput({ label, onChange, errMessage, id, ...inputProps }) {
       <span className="invalid">{errMessage}</span>
     </div>
   );
-}
+};
 
 FormInput.propTypes = {
   id: PropTypes.number.isRequired,

@@ -8,8 +8,11 @@ import {
   ImYoutube,
 } from "react-icons/im";
 import "./footer.css";
+import { DataTeam } from "../../utils/DataTeam";
 
-function Footer() {
+const Footer = () => {
+  const Datas = DataTeam();
+
   return (
     <div className="bg-success">
       <div className="container py-3">
@@ -37,43 +40,50 @@ function Footer() {
           </div>
           <div className="col mb-4 mb-md-0">
             <h4 className="text-white">Cotributors</h4>
-            <a
-              href="mailto:ardi19nugroho@gmail.com"
-              className="d-block py-2 px-1 text-black text-decoration-none slide-right"
-            >
-              Ardianto Nugroho
-            </a>
-            <a
-              href="mailto:ardi19nugroho@gmail.com"
-              className="d-block py-2 px-1 text-black text-decoration-none slide-right"
-            >
-              Ferdi Setyo
-            </a>
-            <a
-              href="mailto:ardi19nugroho@gmail.com"
-              className="d-block py-2 px-1 text-black text-decoration-none slide-right"
-            >
-              Reziq
-            </a>
-            <a
-              href="mailto:ardi19nugroho@gmail.com"
-              className="d-block py-2 px-1 text-black text-decoration-none slide-right"
-            >
-              Devi
-            </a>
+            {Datas.map((data) => (
+              <a
+                href="mailto:ardi19nugroho@gmail.com"
+                rel="noreferrer"
+                target="_blank"
+                className="d-block py-2 px-1 text-black text-decoration-none slide-right"
+                key={data.id}
+              >
+                {data.name}
+              </a>
+            ))}
           </div>
           <div className="col mb-4 mb-md-0">
             <h4 className="text-white">Let's join our community</h4>
-            <a href="www.google.com" className="p-2 fs-3 text-black">
+            <a
+              href="https://www.linkedin.com/"
+              rel="noreferrer"
+              target="_blank"
+              className="p-2 fs-3 text-black"
+            >
               <ImLinkedin />
             </a>
-            <a href="www.google.com" className="p-2 fs-3 text-black">
+            <a
+              href="https://web.facebook.com/"
+              rel="noreferrer"
+              target="_blank"
+              className="p-2 fs-3 text-black"
+            >
               <ImFacebook2 />
             </a>
-            <a href="www.google.com" className="p-2 fs-3 text-black">
+            <a
+              href="https://www.instagram.com/"
+              rel="noreferrer"
+              target="_blank"
+              className="p-2 fs-3 text-black"
+            >
               <ImInstagram />
             </a>
-            <a href="www.google.com" className="p-2 fs-3 text-black">
+            <a
+              href="https://www.youtube.com/"
+              rel="noreferrer"
+              target="_blank"
+              className="p-2 fs-3 text-black"
+            >
               <ImYoutube />
             </a>
           </div>
@@ -86,6 +96,6 @@ function Footer() {
       </div>
     </div>
   );
-}
+};
 
 export default Footer;

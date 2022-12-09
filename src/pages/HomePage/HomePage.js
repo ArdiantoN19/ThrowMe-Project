@@ -1,12 +1,12 @@
 import React from "react";
-import Footer from "../../components/Footer/Footer";
 import About from "../../components/HomeComponent/About";
-import BrowserMap from "../../components/HomeComponent/BrowserMap";
+import NewPlaceList from "../../components/HomeComponent/UpdatedPlace/NewPlaceList";
 import Jumbotron from "../../components/HomeComponent/Jumbotron";
 import ServiceCard from "../../components/HomeComponent/ServiceCard";
 import "./home.css";
+import NewArticleList from "../../components/HomeComponent/UpdatedArticle/NewArticleList";
 
-function HomePage() {
+const HomePage = () => {
   return (
     <>
       <div className="jumbotron pt-5 mt-5">
@@ -14,22 +14,22 @@ function HomePage() {
           <Jumbotron />
         </div>
       </div>
-      <div className="container">
+      <div className="container pb-3">
         <About />
       </div>
-      <div className="service-content mt-5">
+      <div className="mt-5 pb-3 bg-secondary">
         <div className="container">
           <ServiceCard />
         </div>
       </div>
       <div className="container mt-5">
-        <BrowserMap />
+        <NewPlaceList />
       </div>
-      <div className="mt-5">
-        <Footer />
+      <div className="container mt-5">
+        <NewArticleList />
       </div>
     </>
   );
-}
+};
 
 export default HomePage;

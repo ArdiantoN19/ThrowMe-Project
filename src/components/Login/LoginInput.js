@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import FormInput from "../FormInput/FormInput";
 import FormInputPassword from "../FormInput/FormInputPassword";
 
-function LoginInput({ login }) {
+const LoginInput = ({ login }) => {
   const [values, setValues] = useState({
     email: "",
     password: "",
@@ -54,8 +54,7 @@ function LoginInput({ login }) {
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    const { email, password } = values;
-    return login({ email, password });
+    return login(values);
   };
 
   const onChangeHandler = (e) => {
@@ -90,17 +89,28 @@ function LoginInput({ login }) {
             Sign Up
           </Link>
         </p>
-        <button
-          type="submit"
-          tabIndex={3}
-          className="d-block fs-5 m-auto fw-semibold btn btn-success text-white mt-5 px-5"
-        >
-          Log In
-        </button>
+        {values.email === "" || values.password === "" ? (
+          <button
+            type="submit"
+            tabIndex={3}
+            className="d-block fs-5 m-auto fw-semibold btn btn-success text-white mt-5 px-5"
+            disabled
+          >
+            Log In
+          </button>
+        ) : (
+          <button
+            type="submit"
+            tabIndex={3}
+            className="d-block fs-5 m-auto fw-semibold btn btn-success text-white mt-5 px-5"
+          >
+            Log In
+          </button>
+        )}
       </form>
     </div>
   );
-}
+};
 
 LoginInput.propTypes = {
   login: PropTypes.func.isRequired,

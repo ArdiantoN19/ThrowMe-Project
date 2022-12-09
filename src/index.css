@@ -4,4 +4,13 @@ body {
     "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+/* Animation  */
+.scale {
+  transition: transform 0.2s ease-in-out;
+}
+.scale:hover {
+  transform: scaleX(1.04);
 }

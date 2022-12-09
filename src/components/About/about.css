@@ -1,0 +1,77 @@
+.our-service {
+  transition: 0.4s ease-in-out;
+}
+.our-service:hover {
+  transform: translateY(-3px);
+  box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.active-link {
+  position: relative;
+}
+
+.active-link::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 25%;
+  width: 50%;
+  height: 6px;
+  background-color: #2ec4b6;
+  border-radius: 3px;
+}
+
+.demo-application {
+  width: 330px;
+  height: 200px;
+}
+
+.opacity {
+  filter: grayscale(1);
+  opacity: 50%;
+  transition: 0.2s ease-in-out;
+}
+
+.opacity:hover {
+  filter: grayscale(0);
+  opacity: 100%;
+}
+
+@media screen and (min-width: 600px) {
+  .bg-about {
+    background: url("../../../public/assets/backgrounds/blob_13.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .demo-application,
+  .service {
+    width: 560px;
+    height: 300px;
+  }
+  .team {
+    height: 600px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .demo-application,
+  .service {
+    width: 650px;
+    height: 330px;
+  }
+  .team {
+    height: 650px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .demo-application,
+  .service {
+    width: 750px;
+    height: 350px;
+  }
+  .team {
+    height: 700px;
+  }
+}

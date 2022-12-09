@@ -1,5 +1,5 @@
 <svg viewBox="0 0 800 500" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" id="blobSvg">
-  <g transform="translate(509, -11)">
-    <path class="blob" d="M410.5,311.5Q348,373,271.5,431Q195,489,126.5,416Q58,343,62,252Q66,161,134,100.5Q202,40,289,66Q376,92,424.5,171Q473,250,410.5,311.5Z" fill="#2ec4b6"></path>
+  <g transform="translate(10, -3)">
+    <path class="blob" d="M448,292.5Q397,335,363,361Q329,387,289.5,396.5Q250,406,201.5,412Q153,418,115.5,383.5Q78,349,92.5,299.5Q107,250,108,209.5Q109,169,125,115.5Q141,62,195.5,58.5Q250,55,286.5,89Q323,123,373,136.5Q423,150,461,200Q499,250,448,292.5Z" fill="#2ec4b6"></path>
   </g>
 </svg>

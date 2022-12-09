@@ -1,0 +1,123 @@
+.card-img {
+  height: 300px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.card-img-featured {
+  height: 280px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.overflow-container {
+  --max-lines: 48;
+  --line-height: 1.4;
+
+  max-height: calc(var(--max-lines) * 1em * var(--line-height));
+  line-height: var(--line-height);
+
+  overflow: hidden;
+  position: relative;
+}
+
+.overflow-container:has(+ .expand-btn:not(:checked)):before {
+  content: "";
+  position: absolute;
+  height: calc(1em * var(--line-height));
+  width: 100%;
+  bottom: 0;
+  height: 200px;
+  pointer-events: none;
+  background: linear-gradient(to bottom, transparent, #fdfffc);
+  z-index: 10;
+}
+
+.expand-btn {
+  display: block;
+  margin: auto;
+  appearance: none;
+  padding: 0.5em;
+  border-radius: 0.25em;
+  cursor: pointer;
+  margin-top: 3rem;
+  border: 1px solid #2ec4b6;
+  color: #2ec4b6;
+}
+
+.expand-btn:hover {
+  background-color: #2ec4b6;
+  color: #fdfffc;
+}
+
+.expand-btn::before {
+  content: "Show more";
+}
+
+.expand-btn:checked:before {
+  content: "Show less";
+}
+
+.overflow-container:has(+ .expand-btn:checked) {
+  max-height: none;
+}
+
+.article_head {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.article_title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
+.article_headline {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
+.card-zoom {
+  width: 100%;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+.zoom {
+  width: 100%;
+  transition: 0.7s;
+}
+
+.zoom:hover {
+  transform: scale(1.1);
+}
+
+.icon_category {
+  width: 28px;
+  height: 28px;
+}
+
+@media screen and (min-width: 700px) {
+  .card-img {
+    height: 250px;
+  }
+  .icon_category {
+    width: 35px;
+    height: 35px;
+  }
+  .card-img-featured {
+    height: 350px;
+  }
+  .article_headline {
+    -webkit-line-clamp: 6; /* number of lines to show */
+  }
+}

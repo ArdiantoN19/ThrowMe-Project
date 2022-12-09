@@ -1,31 +1,37 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
 import { BiUser } from "react-icons/bi";
 import { login } from "../../utils/api";
 import LoginInput from "../../components/Login/LoginInput";
 import Swal from "sweetalert2";
 
-function LoginPage({ loginSuccess }) {
+const LoginPage = ({ loginSuccess }) => {
+  const navigate = useNavigate();
   const onLoginHandler = async (user) => {
     const { error, message, data } = await login(user);
-    if (error) {
-      Swal.fire({
-        icon: "error",
-        title: "Error",
-        text: message,
-        showConfirmButton: false,
-        timer: 2000,
-      });
-    } else {
-      Swal.fire({
-        icon: "success",
-        title: "Success",
-        text: "Success to login",
-        showConfirmButton: false,
-        timer: 2000,
-      });
-      return loginSuccess(data.jwt);
-    }
+    Swal.showLoading();
+    setTimeout(() => {
+      if (error) {
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: message,
+          showConfirmButton: false,
+          timer: 2000,
+        });
+      } else {
+        Swal.fire({
+          icon: "success",
+          title: "Success",
+          text: "Success to login",
+          showConfirmButton: false,
+          timer: 2000,
+        });
+        navigate("/");
+        return loginSuccess(data.jwt);
+      }
+    }, 2000);
   };
 
   return (
@@ -53,7 +59,7 @@ function LoginPage({ loginSuccess }) {
       </div>
     </div>
   );
-}
+};
 
 LoginPage.propTypes = {
   loginSuccess: PropTypes.func.isRequired,

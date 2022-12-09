@@ -5,30 +5,32 @@ import { register } from "../../utils/api";
 import RegisterInput from "../../components/Register/RegisterInput";
 import Swal from "sweetalert2";
 
-function RegisterPage() {
+const RegisterPage = () => {
   const navigate = useNavigate();
 
   const onRegisterHandler = async (user) => {
-    const { error, message, data } = await register(user);
-    if (error) {
-      Swal.fire({
-        icon: "error",
-        title: "Error",
-        text: message,
-        showConfirmButton: false,
-        timer: 2000,
-      });
-    } else {
-      Swal.fire({
-        icon: "success",
-        title: "Success",
-        text: "Success to sign up",
-        showConfirmButton: false,
-        timer: 1500,
-      });
-      console.log(data);
-      navigate("/login");
-    }
+    const { error, message } = await register(user);
+    Swal.showLoading();
+    setTimeout(() => {
+      if (error) {
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: message,
+          showConfirmButton: false,
+          timer: 1750,
+        });
+      } else {
+        Swal.fire({
+          icon: "success",
+          title: "Success",
+          text: "Success to sign up",
+          showConfirmButton: false,
+          timer: 2000,
+        });
+        navigate("/login");
+      }
+    }, 2000);
   };
 
   return (
@@ -56,6 +58,6 @@ function RegisterPage() {
       </div>
     </div>
   );
-}
+};
 
 export default RegisterPage;

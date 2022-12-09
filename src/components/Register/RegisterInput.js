@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import FormInput from "../FormInput/FormInput";
 import FormInputPassword from "../FormInput/FormInputPassword";
 
-function RegisterInput({ register }) {
+const RegisterInput = ({ register }) => {
   const [values, setValues] = useState({
     username: "",
     email: "",
@@ -16,6 +16,8 @@ function RegisterInput({ register }) {
     type: "password",
     bool: true,
   });
+
+  const { username, email, password, confirmPassword } = values;
 
   const onShowPassword = () => {
     if (showPassword.bool) {
@@ -39,9 +41,9 @@ function RegisterInput({ register }) {
       type: "text",
       placeholder: "Username",
       errMessage:
-        "Username shold be 5-16 characters and shouldn't include any special character!",
+        "Username shold be 5-10 characters and shouldn't include any special character!",
       label: "Username",
-      pattern: "^[A-Za-z0-9]{5,16}$",
+      pattern: "^[A-Za-z0-9]{5,10}$",
       required: true,
     },
     {
@@ -81,7 +83,6 @@ function RegisterInput({ register }) {
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    const { username, email, password } = values;
     return register({ username, email, password });
   };
 
@@ -117,17 +118,31 @@ function RegisterInput({ register }) {
             Log in
           </Link>
         </p>
-        <button
-          type="submit"
-          tabIndex={5}
-          className="d-block fs-5 m-auto fw-semibold btn btn-success text-white mt-5 px-5"
-        >
-          Sign Up
-        </button>
+        {username === "" ||
+        email === "" ||
+        password === "" ||
+        confirmPassword === "" ? (
+          <button
+            type="submit"
+            tabIndex={5}
+            className="d-block fs-5 m-auto fw-semibold btn btn-success text-white mt-5 px-5"
+            disabled
+          >
+            Sign Up
+          </button>
+        ) : (
+          <button
+            type="submit"
+            tabIndex={5}
+            className="d-block fs-5 m-auto fw-semibold btn btn-success text-white mt-5 px-5"
+          >
+            Sign Up
+          </button>
+        )}
       </form>
     </div>
   );
-}
+};
 
 RegisterInput.propTypes = {
   register: PropTypes.func.isRequired,
