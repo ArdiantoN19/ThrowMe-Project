@@ -1,5 +1,6 @@
-import CacheHelper from "./cache-helper";
+/* eslint-disable array-callback-return */
 const self = this;
+const CACHE_NAME = "ThrowMeApp-v1";
 
 const assetToCache = [
   "./",
@@ -43,14 +44,43 @@ const assetToCache = [
   "./offline.html",
 ];
 
+//installation
 self.addEventListener("install", (event) => {
-  event.waitUntil(CacheHelper.cachingAppShell([...assetToCache]));
+  event.waitUntil(
+    caches.open(CACHE_NAME).then((cache) => {
+      console.log("Opened cache");
+
+      return cache.addAll(assetToCache);
+    })
+  );
 });
 
-self.addEventListener("activate", (event) => {
-  event.waitUntil(CacheHelper.deleteOldCache());
-});
-
+// listen for request
 self.addEventListener("fetch", (event) => {
-  event.respondWith(CacheHelper.revalidateCache(event.request));
+  event.respondWith(
+    caches.match(event.request).then(async (res) => {
+      try {
+        return await fetch(event.request);
+      } catch {
+        return await caches.match("offline.html");
+      }
+    })
+  );
+});
+
+// actitivate the service worker
+self.addEventListener("activate", (event) => {
+  const cacheWhitelist = [];
+  cacheWhitelist.push(CACHE_NAME);
+  event.waitUntil(
+    caches.keys().then((cacheNames) =>
+      Promise.all(
+        cacheNames.map((cacheName) => {
+          if (!cacheWhitelist.includes(cacheName)) {
+            return caches.delete(cacheName);
+          }
+        })
+      )
+    )
+  );
 });
