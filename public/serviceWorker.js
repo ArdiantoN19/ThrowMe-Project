@@ -1,5 +1,5 @@
-/* eslint-disable no-restricted-globals */
 import CacheHelper from "./cache-helper";
+const self = this;
 
 const assetToCache = [
   "./",
