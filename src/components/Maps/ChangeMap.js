@@ -29,7 +29,7 @@ const ChangeMap = ({ styleMap }) => {
           <li>
             <div
               className="dropdown-item"
-              id="streets-v9"
+              id="streets-v11"
               onClick={onChangeMap}
             >
               Street

@@ -24,7 +24,7 @@ const Maps = () => {
     zoom: 13,
   });
   const [marker, setMarker] = useState([106.8518, -6.1782]);
-  const [map, setMap] = useState("streets-v9");
+  const [map, setMap] = useState("streets-v11");
 
   // To set coordinates from navigation location permission
   useEffect(() => {
