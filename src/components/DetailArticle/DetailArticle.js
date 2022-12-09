@@ -19,7 +19,7 @@ const DetailArticle = ({ article, dataAuthor }) => {
               className="img-fluid lazyload rounded shadow-sm"
               sizes="(max-width: 600px)"
               srcSet={
-                article?.attributes?.picture?.data?.attributes?.formats?.small
+                article?.attributes?.thumbnail?.data?.attributes?.formats?.small
                   ?.url
               }
               alt={article?.attributes?.picture?.data?.attributes?.url}

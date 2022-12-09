@@ -30,7 +30,10 @@ const ArticleList = ({ dataArticles, dataAuthors, onCategory }) => {
             title={dataArticle?.attributes?.title}
             createdAt={dataArticle?.attributes?.createdAt}
             headline={dataArticle?.attributes?.headline}
-            url={dataArticle?.attributes?.thumbnail?.data?.attributes?.url}
+            url={
+              dataArticle?.attributes?.thumbnail?.data?.attributes?.formats
+                ?.thumbnail?.url
+            }
             authorName={dataArticle?.attributes?.author?.data?.attributes?.name}
             authorJob={dataArticle?.attributes?.author?.data?.attributes?.job}
             onCategory={onCategory}
