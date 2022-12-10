@@ -42,7 +42,7 @@ const Footer = () => {
             <h4 className="text-white">Cotributors</h4>
             {Datas.map((data) => (
               <a
-                href="mailto:ardi19nugroho@gmail.com"
+                href={data.social.mail}
                 rel="noreferrer"
                 target="_blank"
                 className="d-block py-2 px-1 text-black text-decoration-none slide-right"

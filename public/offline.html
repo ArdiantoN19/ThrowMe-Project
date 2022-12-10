@@ -4,19 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="icon" href="%PUBLIC_URL%/icons/maskable_icon_x72.png" />
+    <link rel="icon" href="./icons/maskable_icon_x72.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="ThrowMe is a solution for your trash" />
     <title>ThrowMe</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .loss-connection {
+            color: #d6d6d6;
+            padding: 40px;
+            text-align: center;
+            font-size: 2em;
+        }
+    </style>
 </head>
 
 <body>
-    <div style="height:100vh;flex-direction:column;display:flex;justify-content:center;align-items:center;">
-        <div style="color: #d6d6d6; padding:40px 40px;">
-            <h5>Oops</h5>
-            <p>You are offline please connect to internet.</p>
-        </div>
+    <div class="loss-connection">
+        <h5>Oops, You are offline please connect to internet.</h5>
     </div>
+
 </body>
 
 </html>

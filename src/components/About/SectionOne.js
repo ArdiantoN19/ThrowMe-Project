@@ -21,7 +21,10 @@ const SectionOne = () => {
               ThrowMe
             </span>
           </h1>
-          <div className="mt-3 mt-md-4" style={{ textAlign: "justify" }}>
+          <div
+            className="mt-3 mt-md-4"
+            style={{ textAlign: "justify", fontSize: "1.1em" }}
+          >
             <p>
               The culture of littering and overconsumption has become a global
               problem. Although some waste can be recycled, while others are

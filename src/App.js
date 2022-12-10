@@ -76,7 +76,6 @@ const App = () => {
       <div>
         <header>
           <Navbar authedUser={authedUser} />
-          {/* <NavigationBar /> */}
         </header>
         <main>
           <Routes>
@@ -127,6 +126,7 @@ const App = () => {
           />
           <Route path="/*" element={<NotFoundPage />} />
         </Routes>
+        <ArrowUp />
       </main>
       {pathName !== "/maps" ? (
         <footer className="mt-5">
