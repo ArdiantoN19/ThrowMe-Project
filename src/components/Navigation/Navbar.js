@@ -7,10 +7,10 @@ import "./navbar.css";
 const ArrowUp = () => {
   const [show, setShow] = useState(false);
   const handleScroll = () => {
-    if (window.scrollY > 80) {
-      setShow(false);
-    } else {
+    if (window.scrollY > 100) {
       setShow(true);
+    } else {
+      setShow(false);
     }
   };
 
@@ -21,7 +21,7 @@ const ArrowUp = () => {
   window.addEventListener("scroll", handleScroll);
   return (
     <div className="container">
-      {show ? null : (
+      {!show ? null : (
         <div className="position-fixed" style={{ right: "7%", bottom: "20px" }}>
           <button
             className="btn rounded btn-success py-2 border border-white"
@@ -186,12 +186,20 @@ const Navbar = ({ authedUser, name, logout }) => {
                   </button>
                   <ul className="dropdown-menu dropdown-menu-lg-end mt-1 p-0">
                     <li>
-                      <Link className="dropdown-item" to="/locations">
+                      <Link
+                        className="dropdown-item"
+                        to="/locations"
+                        onClick={toggle}
+                      >
                         Location
                       </Link>
                     </li>
                     <li>
-                      <Link className="dropdown-item" to="/profile">
+                      <Link
+                        className="dropdown-item"
+                        to="/profile"
+                        onClick={toggle}
+                      >
                         Profile
                       </Link>
                     </li>
@@ -207,12 +215,14 @@ const Navbar = ({ authedUser, name, logout }) => {
               <div className="d-flex gap-2">
                 <Link
                   to="/login"
+                  onClick={toggle}
                   className="btn border border-success fw-semibold scale"
                 >
                   Log In
                 </Link>
                 <Link
                   to="/register"
+                  onClick={toggle}
                   className="btn btn-success fw-semibold text-white px-5 scale"
                 >
                   Sign Up

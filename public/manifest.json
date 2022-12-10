@@ -2,11 +2,6 @@
   "name": "ThrowMe App",
   "description": "Providing easy solutions in finding waste disposal sites and how to treat waste independently",
   "short_name": "ThrowMe",
-  "start_url": ".",
-  "lang": "id-ID",
-  "theme_color": "#2ec4b6",
-  "display": "standalone",
-  "background_color": "#fdfffc",
   "icons": [
     {
       "src": "/icons/maskable_icon_x48.png",
@@ -44,5 +39,10 @@
       "sizes": "512x512",
       "purpose": "any maskable"
     }
-  ]
+  ],
+  "start_url": ".",
+  "lang": "id-ID",
+  "theme_color": "#2ec4b6",
+  "display": "standalone",
+  "background_color": "#fdfffc"
 }
