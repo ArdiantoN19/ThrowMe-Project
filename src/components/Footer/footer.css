@@ -1,0 +1,8 @@
+.slide-right {
+  transition: 0.5s;
+}
+
+.slide-right:hover {
+  transform: translateX(10px);
+  opacity: 0.6;
+}
