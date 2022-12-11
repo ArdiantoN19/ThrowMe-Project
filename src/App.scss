@@ -1,0 +1,46 @@
+/* make the customizations */
+$theme-colors: (
+  "danger": #ff9f1c,
+  "success": #2ec4b6,
+  "white": #fdfffc,
+  "black": #011627,
+);
+
+body {
+  font-family: "Ubuntu", sans-serif;
+}
+
+.header {
+  text-align: center;
+}
+
+li {
+  &.nav-item .nav-link {
+    color: #011627;
+    margin-right: 20px;
+  }
+  &.nav-item:hover {
+    text-decoration: underline;
+    .nav-link:hover {
+      color: #2ec4b6;
+    }
+  }
+  .nav-link.active {
+    color: #2ec4b6 !important;
+    text-decoration: underline;
+  }
+}
+
+span {
+  &.dangerText {
+    color: #dc3545;
+  }
+
+  &.infoText {
+    color: #17a2b8;
+    font-weight: bold;
+  }
+}
+
+/* import bootstrap to set changes */
+@import "../node_modules/bootstrap/scss/bootstrap";
