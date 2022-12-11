@@ -15,7 +15,7 @@ const DataTeam = () => [
   },
   {
     id: 2,
-    name: "Ferdi Setyo Amanda",
+    name: "Ferdi Setyo A.",
     id_name: "R124X0198",
     job: "Front End Developer",
     social: {

@@ -25,6 +25,7 @@ const CategoryList = ({ onCategory }) => {
             className="p-0 border-0 bg-white scale"
             onClick={onCategoryHandler}
             title={category.value}
+            style={{ width: "44px", height: "44px" }}
           >
             <img
               src={`/assets/icon-trash/${category.value}.png`}

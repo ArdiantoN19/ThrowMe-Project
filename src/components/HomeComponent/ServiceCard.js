@@ -64,9 +64,7 @@ const ServiceCard = () => {
                     <h3 className="fw-bold fs-2 text-black">{data.title}</h3>
                     <p className="card-text  mb-lg-4">{data.headline}</p>
                     <Link
-                      to={
-                        accessToken !== undefined ? "/locations" : data.linkDest
-                      }
+                      to={accessToken !== "" ? "/locations" : data.linkDest}
                       className="btn fw-bold border border-black border-2 btn-clicked text-end"
                     >
                       {data.btnDesc}
