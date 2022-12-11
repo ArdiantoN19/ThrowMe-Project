@@ -71,4 +71,40 @@ const getUserLogged = async () => {
   }
 };
 
-export { getAccessToken, putAccessToken, login, register, getUserLogged };
+const getArticles = async ()=> {
+  const resp = await fetch(`${BASE_URL}/arthicles?populate=*`)
+  const responseJson = await resp.json();
+  
+  if (responseJson.data === null) {
+    return { error: true, data: responseJson.data };
+  } else {
+    return { error: false, data: responseJson.data };
+    // return responseJson;
+  }
+}
+
+const getFeaturedArticle = async () => {
+  const response = await fetch(`${BASE_URL}/arthicles?populate=*&filters[featured][$eq]=true`);
+  const responseJson = await response.json();
+
+  if (responseJson.data === null) {
+    return { error: true, message: responseJson.error.message };
+  } else {
+    return { error: false, data: responseJson.data };
+  }
+};
+
+async function getArticle(id) {
+  const response = await fetch(`${BASE_URL}/arthicles/${id}?populate=*`);
+  const responseJson = await response.json();
+
+  if (responseJson.data === null) {
+    return { error: true, message: responseJson.error.message };
+  } else {
+    return { error: false, data: responseJson.data };
+    // return responseJson;
+  }
+}
+
+
+export { getAccessToken, putAccessToken, login, register, getUserLogged, getArticles, getFeaturedArticle, getArticle};

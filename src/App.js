@@ -9,6 +9,7 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import ArticlesPage from "./pages/ArticlesPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import Swal from "sweetalert2";
+import DetailArticlePage from "./pages/Detail/detail";
 // import withReactContent from "sweetalert2-react-content";
 
 function App() {
@@ -62,6 +63,7 @@ function App() {
             <Route path="/*" element={<HomePage />} />
             <Route path="/maps" element={<MapsPage />} />
             <Route path="/articles" element={<ArticlesPage />} />
+            <Route path="/articles/:id" element={<DetailArticlePage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route
               path="/login"
@@ -84,6 +86,7 @@ function App() {
           <Route path="/*" element={<HomePage />} />
           <Route path="/maps" element={<MapsPage />} />
           <Route path="/articles" element={<ArticlesPage />} />
+          <Route path="/articles/:id" element={<DetailArticlePage />} />
           <Route path="/about" element={<AboutPage />} />
         </Routes>
       </main>
