@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { Link, useLocation } from "react-router-dom";
 import { BiMenuAltRight, BiUser, BiUpArrowAlt } from "react-icons/bi";
+import { ImLocation } from "react-icons/im";
+import { MdLogout } from "react-icons/md";
 import "./navbar.css";
 
 const ArrowUp = () => {
@@ -53,6 +55,24 @@ const Navbar = ({ authedUser, name, logout }) => {
   }, []);
 
   const toggle = () => {
+    if (window.innerWidth < 1000) {
+      setIsOpen(true);
+    } else {
+      return;
+    }
+    const offcanvasBackdrop = document.querySelector(".offcanvas-backdrop");
+    const navbar = document.querySelector(".navbar");
+    offcanvasBackdrop.remove();
+    document.body.style.removeProperty("overflow");
+    document.body.style.removeProperty("padding-right");
+    navbar.style.removeProperty("padding-right");
+    setTimeout(() => {
+      setIsOpen(false);
+    }, 100);
+  };
+
+  const toggleLogout = () => {
+    logout();
     if (window.innerWidth < 1000) {
       setIsOpen(true);
     } else {
@@ -177,21 +197,27 @@ const Navbar = ({ authedUser, name, logout }) => {
               <div className="d-flex align-items-center">
                 <div className="dropdown">
                   <button
-                    className="btn btn-secondary fs-5 dropdown-toggle"
+                    className="btn btn-success py-2 rounded-circle text-white fs-5 text-uppercase"
                     type="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
-                    <BiUser className="fs-4 text-success" /> {name}
+                    {name.substring(0, 2)}
                   </button>
-                  <ul className="dropdown-menu dropdown-menu-lg-end mt-1 p-0">
+                  <ul
+                    className="dropdown-menu dropdown-menu-lg-end mt-1 p-0"
+                    style={{ width: "200px" }}
+                  >
+                    <li className="my-3 text-center border-bottom border-2 border-black fs-5">
+                      {name}
+                    </li>
                     <li>
                       <Link
                         className="dropdown-item"
                         to="/locations"
                         onClick={toggle}
                       >
-                        Location
+                        <ImLocation className="fs-4 text-success" /> Location
                       </Link>
                     </li>
                     <li>
@@ -200,12 +226,15 @@ const Navbar = ({ authedUser, name, logout }) => {
                         to="/profile"
                         onClick={toggle}
                       >
-                        Profile
+                        <BiUser className="fs-4 text-success" /> Profile
                       </Link>
                     </li>
                     <li>
-                      <button className="dropdown-item" onClick={logout}>
-                        Logout
+                      <button
+                        className="dropdown-item text-danger"
+                        onClick={toggleLogout}
+                      >
+                        <MdLogout className="fs-4" /> Logout
                       </button>
                     </li>
                   </ul>

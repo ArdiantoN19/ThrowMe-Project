@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { ImLocation } from "react-icons/im";
+import "./newPlace.css";
 
 const NewPlaceItem = ({ imageUrl, name, category, coordinates, address }) => {
   return (
@@ -10,7 +11,7 @@ const NewPlaceItem = ({ imageUrl, name, category, coordinates, address }) => {
         <div className="card rounded">
           <div className="card-zoom">
             <img
-              className="img-fluid zoom rounded-top"
+              className="img-fluid zoom rounded-top img-place"
               src={imageUrl}
               alt="place"
             />

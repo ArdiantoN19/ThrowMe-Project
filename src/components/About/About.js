@@ -11,7 +11,7 @@ const About = () => {
         <SectionOne />
       </div>
       <div className="mb-4 container-fluid">
-        <SectionTwo embedId="rokGy0huYEA" />
+        <SectionTwo embedId="6mu2P33BrtI" />
       </div>
       <div className="mb-3 container">
         <Team />
