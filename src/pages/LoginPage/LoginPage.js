@@ -1,10 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { BiUser } from "react-icons/bi";
 import { login } from "../../utils/api";
 import LoginInput from "../../components/Login/LoginInput";
 import Swal from "sweetalert2";
+import { AiOutlineArrowLeft } from "react-icons/ai";
 
 const LoginPage = ({ loginSuccess }) => {
   const navigate = useNavigate();
@@ -36,6 +37,13 @@ const LoginPage = ({ loginSuccess }) => {
 
   return (
     <div className="container bg-white mt-5">
+      <div className="row justify-content-center align-items-center">
+        <div className="col-10 col-md-8 col-lg-12">
+          <Link className=" text-decoration-none mt-5 text-success" to="/">
+            <AiOutlineArrowLeft className="fs-5" /> Back
+          </Link>
+        </div>
+      </div>
       <div
         className="row justify-content-center align-items-center"
         style={{ minHeight: "90vh" }}

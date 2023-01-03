@@ -74,9 +74,12 @@ const App = () => {
   if (authedUser === null) {
     return (
       <div>
-        <header>
-          <Navbar authedUser={authedUser} />
-        </header>
+        {pathName !== "/login" && pathName !== "/register" ? (
+          <header>
+            <Navbar authedUser={authedUser} />
+          </header>
+        ) : null}
+
         <main>
           <Routes>
             <Route path="/" element={<HomePage />} />
@@ -89,7 +92,7 @@ const App = () => {
               element={<LoginPage loginSuccess={onLoginSuccess} />}
             />
             <Route path="/register" element={<RegisterPage />} />
-            <Route path="/*" element={<NotFoundPage />} />
+            <Route path="*" element={<NotFoundPage />} />
           </Routes>
           <ArrowUp />
         </main>
@@ -124,7 +127,7 @@ const App = () => {
             path="/locations"
             element={<LocationPage authedUser={authedUser} />}
           />
-          <Route path="/*" element={<NotFoundPage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
         <ArrowUp />
       </main>

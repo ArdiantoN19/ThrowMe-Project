@@ -16,6 +16,7 @@
 .zoom {
   width: 100%;
   transition: 0.7s;
+  object-fit: cover;
 }
 
 .zoom:hover {

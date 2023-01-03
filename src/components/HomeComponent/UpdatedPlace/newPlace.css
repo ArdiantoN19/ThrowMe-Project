@@ -1,5 +1,6 @@
 .img-place {
-  height: 280px;
+  height: 230px;
+  object-fit: cover;
 }
 
 @media screen and (min-width: 700px) {

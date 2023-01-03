@@ -15,7 +15,7 @@ const ServiceCard = () => {
           {datas.map((data) =>
             data.id !== 2 ? (
               <div
-                className="row row-cols-1 row-cols-md-2 pb-4 mb-5 service-content__serviceCard justify-content-center align-items-center bg-white rounded-4 px-5"
+                className="row row-cols-1 row-cols-md-2 pb-4 mb-5 service-content__serviceCard justify-content-center align-items-center bg-white rounded-4 px-4 px-md-5"
                 key={data.id}
               >
                 <div className="col">
@@ -47,7 +47,7 @@ const ServiceCard = () => {
               </div>
             ) : (
               <div
-                className="row row-cols-1 row-cols-md-2 mb-5 bg-white rounded-4 pb-4 pe-2 pe-md-0 pb-md-0 service-content__serviceCard justify-content-center align-items-center px-5"
+                className="row row-cols-1 row-cols-md-2 pb-4 mb-5 service-content__serviceCard justify-content-center align-items-center bg-white rounded-4 px-4 px-md-5"
                 key={data.id}
               >
                 <div className="col order-md-2">

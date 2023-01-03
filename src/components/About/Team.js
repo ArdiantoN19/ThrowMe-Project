@@ -10,7 +10,10 @@ const Team = () => {
       <h1 className="text-center mb-5 mt-5">Meet the Team</h1>
       <div className="row justify-content-center align-items-center">
         {DataTeams.map((data) => (
-          <div className="col-9 col-md-5 col-lg-4 mb-3 team" key={data.id}>
+          <div
+            className="col-9 col-md-5 col-lg-4 col-xl-3 mb-3 team"
+            key={data.id}
+          >
             <img
               className="img-fluid shadow-sm rounded-3 mb-3"
               src={data.avatar}

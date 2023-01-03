@@ -1,9 +1,10 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { BiUser } from "react-icons/bi";
 import { register } from "../../utils/api";
 import RegisterInput from "../../components/Register/RegisterInput";
 import Swal from "sweetalert2";
+import { AiOutlineArrowLeft } from "react-icons/ai";
 
 const RegisterPage = () => {
   const navigate = useNavigate();
@@ -35,6 +36,13 @@ const RegisterPage = () => {
 
   return (
     <div className="container bg-white mt-5">
+      <div className="row justify-content-center align-items-center">
+        <div className="col-10 col-md-8 col-lg-12">
+          <Link className=" text-decoration-none mt-5 text-success" to="/">
+            <AiOutlineArrowLeft className="fs-5" /> Back
+          </Link>
+        </div>
+      </div>
       <div
         className="row justify-content-center align-items-center"
         style={{ minHeight: "90vh" }}

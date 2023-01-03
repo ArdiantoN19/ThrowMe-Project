@@ -1,0 +1,23 @@
+.img-detail {
+  width: 90%;
+  object-fit: cover;
+  height: 240px;
+}
+
+@media screen and (min-width: 700px) {
+  .img-detail {
+    height: 300px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .img-detail {
+    height: 400px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .img-detail {
+    width: 80%;
+    height: 450px;
+  }
+}

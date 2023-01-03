@@ -5,12 +5,13 @@ import { showFormattedDate } from "../../utils/showFormattedDate";
 import { filterAvatarAuthor } from "../../utils/filterAvatarAuthor";
 import "lazysizes";
 import "lazysizes/plugins/parent-fit/ls.parent-fit";
+import "./detail.css";
 
 const DetailArticle = ({ article, dataAuthor }) => {
   return (
     <div className="row justify-content-center align-items-center">
-      <div className="col-12 col-md-10 ">
-        <h1 className="article_title text-center fw-bold my-3">
+      <div className="col-12 col-md-10 col-lg-9 ">
+        <h1 className="fs-2 text-center fw-bold my-3">
           {article?.attributes?.title}
         </h1>
         <div className="text-center mb-4">
@@ -47,12 +48,11 @@ const DetailArticle = ({ article, dataAuthor }) => {
               type="image/png"
             />
             <img
-              className="img-fluid lazyload rounded shadow-sm"
+              className="img-fluid lazyload rounded shadow-sm img-detail"
               data-src={
                 article?.attributes?.picture?.data?.attributes?.formats?.large
                   ?.url
               }
-              style={{ width: "700px", height: "400px", objectFit: "cover" }}
               alt={article?.attributes?.picture?.data?.attributes?.url}
             />
           </picture>
@@ -86,7 +86,7 @@ const DetailArticle = ({ article, dataAuthor }) => {
             {showFormattedDate(article?.attributes?.createdAt)}
           </small>
         </div>
-        <div style={{ textAlign: "justify" }}>
+        <div style={{ textAlign: "justify", fontSize: "1.15em" }}>
           <ReactMarkdown>{article?.attributes?.description}</ReactMarkdown>
         </div>
       </div>
